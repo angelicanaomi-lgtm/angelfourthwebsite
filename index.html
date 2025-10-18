@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Travel Journey</title>
+  <style>
+    /* === UMUM === */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f3f3f3;
+      color: #2c2c2c;
+    }
+
+    /* === HEADER === */
+    header {
+      background: #2f2f2f;
+      color: #ffffff;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    header p {
+      font-style: italic;
+      opacity: 0.9;
+      font-size: 1em;
+    }
+
+    /* === NAVIGASI === */
+    nav {
+      background-color: #444;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: #f0f0f0;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 5px #ccc;
+    }
+
+    /* === KONTEN === */
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* === GALERI === */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .place {
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .place:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 14px rgba(0,0,0,0.15);
+    }
+
+    .place img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      filter: grayscale(80%);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .place img:hover {
+      filter: grayscale(0%);
+      transform: scale(1.02);
+    }
+
+    .place h3 {
+      margin: 15px;
+      color: #222;
+      font-weight: 600;
+    }
+
+    .place p {
+      margin: 0 15px 20px;
+      color: #555;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    /* === POPUP === */
+    #popup {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      text-align: center;
+    }
+
+    #popup img {
+      max-width: 90%;
+      max-height: 90%;
+      margin-top: 5%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    /* === FOOTER === */
+    footer {
+      background: #2f2f2f;
+      color: #ccc;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+
+    footer span {
+      color: #fff;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Travel Journey</h1>
+    <p>Sharing some of my favorite trips 🗺️</p>
+  </header>
+
+  <nav>
+    <a href="#japan">Japan</a>
+    <a href="#bali">Bali</a>
+    <a href="#malaysia">Malaysia</a>
+  </nav>
+
+  <div class="container">
+    <section id="japan">
+      <h2>Japan</h2>
+      <div class="gallery">
+        <div class="place">
+          <img src="Tokyo.jpg" alt="Tokyo">
+          <h3>Tokyo</h3>
+          <p>The city is fun and full of lights. The food tastes really good too.</p>
+        </div>
+        <div class="place">
+          <img src="Kyoto.jpeg" alt="Kyoto">
+          <h3>Kyoto</h3>
+          <p>This is my favorite place in Japan. The streets look calm and clean.</p>
+        </div>
+        <div class="place">
+          <img src="Osaka.jpg" alt="Osaka">
+          <h3>Osaka</h3>
+          <p>I like the snacks here. The people are nice and kind to visitors.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="bali">
+      <h2>Bali (Indonesia)</h2>
+      <div class="gallery">
+        <div class="place">
+          <img src="Ubud.jpg" alt="Ubud">
+          <h3>Ubud</h3>
+          <p>The view is really pretty. It feels peaceful and close to nature.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="malaysia">
+      <h2>Malaysia</h2>
+      <div class="gallery">
+        <div class="place">
+          <img src="GH.jpg" alt="Genting Highlands">
+          <h3>Genting Highlands</h3>
+          <p>The weather is cold and windy. I wore two jackets here!</p>
+        </div>
+        <div class="place">
+          <img src="Penang.jpg" alt="Penang">
+          <h3>Penang</h3>
+          <p>The food here is delicious. I really like walking around the city.</p>
+        </div>
+        <div class="place">
+          <img src="kl.jpg" alt="Kuala Lumpur">
+          <h3>Kuala Lumpur</h3>
+          <p>The city is big and bright at night. It was fun visiting here.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="popup">
+    <img id="popup-img" src="" alt="Popup Image">
+  </div>
+
+  <footer>
+    © 2025 <span>My Travel Journal</span> | Made by Me 🖤
+  </footer>
+
+  <script>
+    const popup = document.getElementById('popup');
+    const popupImg = document.getElementById('popup-img');
+
+    document.querySelectorAll('.place img').forEach(img => {
+      img.addEventListener('click', () => {
+        popup.style.display = 'block';
+        popupImg.src = img.src;
+      });
+    });
+
+    popup.addEventListener('click', () => popup.style.display = 'none');
+  </script>
+
+</body>
+</html>
